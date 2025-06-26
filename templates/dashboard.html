@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - IES Juan Carlos Dávalos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-dark border-end" id="sidebar-wrapper">
+      <div class="sidebar-heading text-white p-3">IES J.C. Dávalos</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white menu-item" data-section="carreras">Carreras</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white menu-item" data-section="docentes">Docentes</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white menu-item" data-section="alumnos">Alumnos</a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <h4 class="m-0">Panel de Administración</h4>
+          <button class="btn btn-outline-primary ms-auto">Usuario</button>
+        </div>
+      </nav>
+
+      <div class="container-fluid mt-4">
+        <!-- Sección Carreras -->
+        <section id="carreras" class="dashboard-section">
+          <h5 class="mb-3">Carreras</h5>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Tecnicatura en Informática</h5>
+                  <p class="card-text">Duración: 3 años | Modalidad: Presencial</p>
+                </div>
+              </div>
+            </div>
+            <!-- Agrega más carreras aquí -->
+          </div>
+        </section>
+
+        <!-- Sección Docentes -->
+        <section id="docentes" class="dashboard-section d-none">
+          <h5 class="mb-3">Docentes</h5>
+          <table class="table table-hover table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Nombre</th>
+                <th>Asignatura</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana López</td>
+                <td>Programación</td>
+                <td>ana.lopez@instituto.edu.ar</td>
+              </tr>
+              <!-- Más docentes -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Sección Alumnos -->
+        <section id="alumnos" class="dashboard-section d-none">
+          <h5 class="mb-3">Alumnos</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-group">
+                <li class="list-group-item">Juan Pérez - 3° Año Informática</li>
+                <li class="list-group-item">María Gómez - 2° Año Administración</li>
+                <!-- Más alumnos -->
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script de navegación dinámica -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuItems = document.querySelectorAll(".menu-item");
+      const sections = document.querySelectorAll(".dashboard-section");
+
+      menuItems.forEach(item => {
+        item.addEventListener("click", e => {
+          e.preventDefault();
+          const target = item.getAttribute("data-section");
+
+          sections.forEach(section => {
+            if (section.id === target) {
+              section.classList.remove("d-none");
+            } else {
+              section.classList.add("d-none");
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Tipografía general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Wrapper general */
+#wrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #212529;
+}
+
+.sidebar-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #343a40;
+  padding: 1rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Menú lateral */
+.list-group-item-action {
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.list-group-item-action:hover {
+  background-color: #6f42c1 !important; /* Violeta Bootstrap */
+  color: #ffffff !important;
+  transform: translateX(5px);
+}
+
+/* Contenido */
+#page-content-wrapper {
+  flex: 1;
+  padding: 0;
+}
+
+/* Tarjetas de carreras */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+/* Encabezado */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar h4 {
+  color: #343a40;
+  font-weight: 600;
+}
+
+/* Tabla de docentes */
+.table-hover tbody tr:hover {
+  background-color: #f1e7ff;
+  transition: background-color 0.2s ease;
+}
+
+/* Transición general */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid #dee2e6;
+}
+
+/* Alumnos */
+.list-group-item {
+  transition: all 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #e0d4f7;
+  transform: scale(1.01);
+}
